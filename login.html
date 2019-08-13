@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<script src="jss/jquery-3.4.1.min.js"></script>
+<script></script>
+</head>
+<body>
+<h2>Login Form</h2>
+<form action=""method="post">
+    <div class="container">
+            <label >Usename</label>
+            <input type="text" name="username"id="username" value=""/>
+            <br/>
+             <label >Email</label>
+            <input type="text" name="email"id="email" value="" />
+             
+            <br/>
+             <label >Password</label>
+            <input type="text" name="password"id="password" value="" />
+             
+            <br/>
+            <button onclick="getInfo(); return false;" type="submit">Login</button>
+    </div> 
+  <script type="text/javascript">
+      function getInfo()
+      {
+             var username = document.getElementById("username").value;
+            var email =document.getElementById("email").value;
+             var password =document.getElementById("password").value;
+           if(username ==""){
+            document.getElementById("errorname").innerHTML="Vui lòng nhập đủ họ tên ";
+         }else{
+            document.getElementById("errorname").innerHTML ="";
+         }
+         if(email ==""){
+            document.getElementById("erroremail").innerHTML="Vui lòng nhập lại email ";
+         }else{
+            document.getElementById("erroremail").innerHTML ="";
+         }
+         if(password ==""){
+            document.getElementById("errorpassword").innerHTML="Vui lòng nhập lại password";
+         }else{
+            document.getElementById("errorpassword").innerHTML ="";
+         }
+         //check show kết quả 
+         if(username && email && password){
+            infor ="Tên của bạn là&nbsp;"+uname+"</br>";
+            infor +="Email của bạn là&nbsp;"+email+"</br>";
+            infor +="Password của bạn là&nbsp;"+password+"</br>";
+            document.getElementById("ketqua").innerHTML=infor;
+         }
+      }
+  </script>
+</form>
+<div id="ketqua"></div>
+</body>
+</html>
