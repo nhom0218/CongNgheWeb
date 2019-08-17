@@ -5,10 +5,12 @@
 	$a = $_POST['tomtat'];
 	$n = $_POST['noidung'];
 	$b = $_POST['ngaydang'];
-	$v = $_POST['view'];
-	include 'connect.php';
-	$data = mysqli_query($con,"insert into tintuc(img,tieude,tomtat,noidung,ngaydang,view) values ('$i','$t','$a','$n','$b','$v')") ;  
+	
+	include '../connect.php';
+	$data = mysqli_query($con,"insert into tintuc(img,tieude,tomtat,noidung,ngaydang) values ('$i','$t','$a','$n','$b')") ;  
 	if ($data) {
 		header("location:admin.php");
 	}
  ?>
+
+ 
